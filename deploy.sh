@@ -24,7 +24,6 @@ cd ../3_edge
 greymatter create cluster < cluster.json
 greymatter create shared_rules < shared_rules.json
 greymatter create route < route.json
-greymatter create route < route-slash.json
 
 # configure Catalog entry for new service
 cd ../4_catalog
