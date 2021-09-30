@@ -1,0 +1,12 @@
+{
+    "zone_key": "zone-default-zone",
+    "cluster_key": "fibonacci-cluster-google",
+    "name": "google",
+    "instances": [
+        {
+            "host": "google.com",
+            "port": 80
+        }
+    ],
+    "require_tls": false
+}

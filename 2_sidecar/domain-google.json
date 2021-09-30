@@ -1,0 +1,7 @@
+{
+    "zone_key": "zone-default-zone",
+    "domain_key": "fibonacci-domain-google",
+    "name": "*",
+    "port": 1337,
+    "force_https": false
+}

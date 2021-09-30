@@ -1,0 +1,11 @@
+{
+    "zone_key": "zone-default-zone",
+    "listener_key": "fibonacci-listener-google",
+    "domain_keys": [
+        "fibonacci-domain-google"
+    ],
+    "name": "egress",
+    "ip": "127.0.0.1",
+    "port": 1337,
+    "protocol": "http_auto"
+}
