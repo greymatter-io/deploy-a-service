@@ -1,10 +1,10 @@
 scriptdir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 export GM_HOSTNAME=127.0.0.1
-export GREYMATTER_API_HOST=${GM_HOSTNAME}:30000
+export GREYMATTER_API_HOST=127.0.0.1:5555
 export GREYMATTER_API_INSECURE=true
-export GREYMATTER_API_PREFIX=/services/control-api/latest
-export GREYMATTER_API_SSL=true
+export GREYMATTER_API_PREFIX=
+export GREYMATTER_API_SSL=false
 export GREYMATTER_API_SSLCERT="$scriptdir/certs/tls.crt"
 export GREYMATTER_API_SSLKEY="$scriptdir/certs/tls.key"
 export GREYMATTER_CATALOG_HOST=${GM_HOSTNAME}:30000
