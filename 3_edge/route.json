@@ -1,7 +1,7 @@
 {
   "route_key": "edge-to-fibonacci-route-slash",
   "domain_key": "edge",
-  "zone_key": "zone-default-zone",
+  "zone_key": "default-zone",
   "shared_rules_key": "edge-to-fibonacci-rules",
   "route_match": {
     "path": "/services/fibonacci/",

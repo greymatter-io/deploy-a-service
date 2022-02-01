@@ -1,6 +1,6 @@
 {
     "service_id": "fibonacci",
-    "mesh_id": "zone-default-zone",
+    "mesh_id": "mesh-sample",
     "name": "Fibonacci",
     "version": "1.0",
     "owner": "Decipher",
@@ -13,8 +13,8 @@
     "max_instances": 2,
     "enable_instance_metrics": true,
     "enable_historical_metrics": true,
-    "api_endpoint": "/services/fibonacci/1.0",
-    "api_spec_endpoint": "/services/fibonacci/1.0",
+    "api_endpoint": "/services/fibonacci/",
+    "api_spec_endpoint": "/services/fibonacci/",
     "owner_url": "https://greymatter.io",
     "description": "Fibonacci is a simple service that takes a number n and returns the nth entry of the Fibonacci sequence."
 }

@@ -42,13 +42,13 @@ spec:
             - name: XDS_CLUSTER
               value: "fibonacci"
             - name: XDS_HOST
-              value: "control.greymatter.svc"
+              value: "control.greymatter.svc.cluster.local"
             - name: XDS_NODE_ID
               value: "default"
             - name: XDS_PORT
               value: "50000"
             - name: XDS_ZONE
-              value: "zone-default-zone"
+              value: "default-zone"
           volumeMounts:
             - name: spire-socket
               mountPath: /run/spire/socket
