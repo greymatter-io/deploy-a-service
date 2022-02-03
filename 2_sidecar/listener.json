@@ -1,5 +1,5 @@
 {
-    "zone_key": "zone-default-zone",
+    "zone_key": "default-zone",
     "listener_key": "fibonacci-listener",
     "domain_keys": [
         "fibonacci-domain"
@@ -10,10 +10,10 @@
     "protocol": "http_auto",
     "secret": {
         "secret_key": "fibonacci.identity",
-        "secret_name": "spiffe://quickstart.greymatter.io/fibonacci",
-        "secret_validation_name": "spiffe://quickstart.greymatter.io",
+        "secret_name": "spiffe://greymatter.io/mesh-sample.fibonacci",
+        "secret_validation_name": "spiffe://greymatter.io",
         "subject_names": [
-            "spiffe://quickstart.greymatter.io/edge"
+            "spiffe://greymatter.io/mesh-sample.edge"
         ],
         "ecdh_curves": [
             "X25519:P-256:P-521:P-384"

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -x
 
 cd $(dirname "${BASH_SOURCE[0]}")
@@ -6,11 +7,26 @@ cd $(dirname "${BASH_SOURCE[0]}")
 # configure greymatter CLI to communicate with Control API
 source ./env
 
-# deploy to Kubernetes
 cd 1_kubernetes
-kubectl apply -f deployment.yaml
+kubectl delete -f deployment.yaml
 
-sleep 10
+cd ../2_sidecar
+greymatter delete domain fibonacci-domain
+greymatter delete listener fibonacci-listener
+greymatter delete cluster fibonacci-cluster
+greymatter delete shared_rules fibonacci-local-rules
+greymatter delete route fibonacci-local-route
+greymatter delete proxy fibonacci-proxy
+
+cd ../3_edge
+greymatter delete cluster edge-to-fibonacci-cluster
+greymatter delete shared_rules edge-to-fibonacci-rules
+greymatter delete route edge-to-fibonacci-route-slash
+
+#cd ../4_catalog
+#greymatter delete catalog-service fibonacci
+
+cd ..
 
 # REMOVE OPERATOR ONES
 greymatter delete proxy fibonacci
@@ -23,9 +39,6 @@ greymatter delete route fibonacci-to-gm-redis
 
 greymatter delete shared_rules fibonacci
 greymatter delete listener fibonacci
-greymatter delete listener fibonacci:8080
-greymatter delete listener fibonacci:8081
-greymatter delete listener fibonacci:10808
 greymatter delete listener fibonacci-egress-tcp-to-gm-redis
 
 greymatter delete domain fibonacci
@@ -37,24 +50,4 @@ greymatter delete cluster fibonacci:8081
 greymatter delete cluster fibonacci:10808
 greymatter delete cluster fibonacci-to-gm-redis
 
-
-# send sidecar configuration to Control API
-cd ../2_sidecar
-greymatter create domain < domain.json
-greymatter create listener < listener.json
-greymatter create cluster < cluster.json
-greymatter create shared_rules < shared_rules.json
-greymatter create route < route.json
-greymatter create proxy < proxy.json
-
-# send edge configuration to Control API
-cd ../3_edge
-greymatter create cluster < cluster.json
-greymatter create shared_rules < shared_rules.json
-greymatter create route < route.json
-
-# configure Catalog entry for new service
-cd ../4_catalog
-greymatter create catalog-service < entry.json
-
-cd ..
+greymatter delete catalog-service fibonacci
