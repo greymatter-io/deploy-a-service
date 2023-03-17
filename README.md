@@ -1,2 +1,2 @@
 # deploy-a-service
-Repo w/ Grey Matter configs for demos from the official docs.
+Repo w/ greymatter configs for demos from the official docs.
