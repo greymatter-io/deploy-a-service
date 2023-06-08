@@ -3,7 +3,7 @@
     "mesh_id": "mesh-sample",
     "name": "Fibonacci",
     "version": "1.0",
-    "owner": "Decipher",
+    "owner": "greymatter.io",
     "business_impact": "low",
     "capability": "Tutorial",
     "runtime": "GO",
